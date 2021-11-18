@@ -2,7 +2,7 @@
 //WHEN I open the planner
 //THEN the current day is displayed at the top of the calendar
 let today = moment()
-$("#currentDay").text(today.format("MMMM D, YYYY"));
+$("#currentDay").text(today.format("dddd, MMMM D, YYYY"));
 console.log(today);
 
 
