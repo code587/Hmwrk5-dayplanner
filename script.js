@@ -1,12 +1,7 @@
-//You'll need to use the [Moment.js](https://momentjs.com/) 
-let hourlyTask = document.querySelector("#activity");
-let saveActivity = document.querySelector(".saveBtn");
+
 let task = localStorage.getItem("task");
 
-renderLastRegistered();
-
-console.log(saveActivity);
-
+// current day. Used [Moment.js](https://momentjs.com/) 
 let today = moment()
 $("#currentDay").text(today.format("dddd, MMMM D, YYYY"));
 console.log(today);
@@ -14,29 +9,22 @@ console.log(today);
 //WHEN I view the timeblocks for that day
 //THEN each timeblock is color coded to indicate whether it is in the past, present, or future
 
-hourlyTask.addEventListener("click", function() {
-  hourlyTask.textContent = ""
-})
-console.log(hourlyTask);
-
-function renderLastRegistered() {
-    let activity = localStorage.getItem("activity");
-
-    if (activity) {
-        return;
-    }
-}
-saveActivity.addEventListener("click", function(event) {
+//save .description when button clicked 
+$(".saveBtn").on("click", function(event) {
     event.preventDefault();
-    
-let hourlyTask = document.querySelector("#activity").value;
+   
+//this is to save description in its sibling and timeBlock of its parent when savebtn clicked
+  let textAreaValue = $(this).siblings(".description").val();
+console.log(textAreaValue)
+  let timeBlock = $(this).parent().attr("id")
+  console.log(timeBlock)
 
-localStorage.setItem("hourlyTask", hourlyTask);
-renderLastRegistered();
+//set timeblock and textAreValue in localStorage if saveBtn clicked
+localStorage.setItem(timeBlock, textAreaValue);
 })
 console.log(localStorage);
-//WHEN I click the save button for that timeblock
-//THEN the text for that event is saved in local storage
 
-//WHEN I refresh the page
-//THEN the saved events persist
+//$("#hour-9 .description").val(localStorage.getItem("hour-9"))
+for(var i = 9; i < 18; i++){
+    $(`#hour-${i} .description`).val(localStorage.getItem(`hour-${i}`))
+}
