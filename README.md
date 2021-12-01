@@ -25,6 +25,7 @@ Bootstrap
 Fontawesome
 
 ## screenshot
+![planner screenshot](./Images/hourlytodoplanner.png)
 
 ## application link
 https://code587.github.io/Hourly-ToDo-Planner/
