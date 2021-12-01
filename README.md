@@ -1,89 +1,29 @@
-# 05 Third-Party APIs: Work Day Scheduler
+# Hourly ToDo Planner
 
-## Your Task
+A one day hourly planner (9am-5pm) allows you to focus on the Tasks/ToDos for that day during the average work time.
+Current date is automatically populated at the top of the planner.
 
-Create a simple calendar application that allows a user to save events for each hour of the day by modifying starter code. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery.
+## Features
 
-You'll need to use the [Moment.js](https://momentjs.com/) library to work with date and time. Be sure to read the documentation carefully and concentrate on using Moment.js in the browser.
+Planner features ability to know whether the taks listed in the planner are scheduled during, past, or after the time you are currently reviewing the planner.
 
-## User Story
+Past, present, and future tasks are highlighted by different colors.
 
-```md
-AS AN employee with a busy schedule
-I WANT to add important events to a daily planner
-SO THAT I can manage my time effectively
-```
+Green = Tasks scheduled for hour(s) prior to the hour you are reviewing the planner.
 
-## Acceptance Criteria
+Orange = Task scheduled for the hour you are currently reviewing the planner.
 
-```md
-GIVEN I am using a daily planner to create a schedule
-WHEN I open the planner
-THEN the current day is displayed at the top of the calendar
-WHEN I scroll down
-THEN I am presented with timeblocks for standard business hours
-WHEN I view the timeblocks for that day
-THEN each timeblock is color coded to indicate whether it is in the past, present, or future
-WHEN I click into a timeblock
-THEN I can enter an event
-WHEN I click the save button for that timeblock
-THEN the text for that event is saved in local storage
-WHEN I refresh the page
-THEN the saved events persist
-```
+Grey = Tasks scheduled in the hour(s) coming up after the hour you are currently reviewing the planner.
 
-The following animation demonstrates the application functionality:
+Input a task/todo in the middle column and click the blue save button to store it in your planner. You may refresh the page or come back later and saved your task will continue to be listed in the time block previously saved.
 
-![A user clicks on slots on the color-coded calendar and edits the events.](./Assets/05-third-party-apis-homework-demo.gif)
+## Technologies used
 
+Moment.js
+JQuery
+Bootstrap
+Fontawesome
 
-## Grading Requirements
+## application link
+https://code587.github.io/Hourly-ToDo-Planner/
 
-This homework is graded based on the following criteria: 
-
-### Technical Acceptance Criteria: 40%
-
-* Satisfies all of the above acceptance criteria plus the following:
-
-  * Uses a date utility library to work with date and time
-
-### Deployment: 32%
-
-* Application deployed at live URL
-
-* Application loads with no errors
-
-* Application GitHub URL submitted
-
-* GitHub repo contains application code
-
-### Application Quality: 15%
-
-* Application user experience is intuitive and easy to navigate
-
-* Application user interface style is clean and polished
-
-* Application resembles the mock-up functionality provided in the homework instructions
-
-### Repository Quality: 13%
-
-* Repository has a unique name
-
-* Repository follows best practices for file structure and naming conventions
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages
-
-* Repository contains quality README file with description, screenshot, and link to deployed application
-
-## Review
-
-You are required to submit the following for review:
-
-* The URL of the deployed application
-
-* The URL of the GitHub repository, with a unique name and a README describing the project
-
-- - -
-© 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
