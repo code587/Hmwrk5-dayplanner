@@ -10,15 +10,13 @@ console.log(today);
 
 //used moment format for current time when website is opened
 let currentTime = parseInt(moment().format("kk"));
-
 console.log(currentTime);
 
-
+//changes background color of textarea depending on currentTime
 function description() {
   console.log(plannerTime);
   console.log(bgColor)
   for (let i = 0; i < plannerTime.length; i++) {
-  
   if (currentTime === plannerTime[i]) {
     bgColor[i].classList.add("present");
     console.log(bgColor[i]);
@@ -29,21 +27,9 @@ function description() {
 }
   else {
     bgColor[i].classList.add("past");
-
   }
 }}
 description();
-// plannerTime = 0
-// for (let i = 0; i < plannerTime.length; i++) {
-//   if (i = currentTime) {
-//     ("style", ".present")
-// }
-// }
-// console.log(plannerTime);
-
-//WHEN I view the timeblocks for that day
-//THEN each timeblock is color coded to indicate whether it is in the past, present, or future
-
 
 //saves description when button clicked 
 $(".saveBtn").on("click", function(event) {
