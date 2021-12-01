@@ -1,34 +1,37 @@
 
 let task = localStorage.getItem("task");
-let plannerTime = ["Nine","Ten","Eleven","Twelve","One","Two","Three","Four","Five"];
-console.log(plannerTime);
-
-
+let plannerTime = [09,10,11,12,13,14,15,16,17];
+let bgColor = document.querySelectorAll(".description");
 
 // current day. Used [Moment.js](https://momentjs.com/) 
 let today = moment()
 $("#currentDay").text(today.format("dddd, MMMM D, YYYY"));
 console.log(today);
 
-let currentTime = moment().format("h:mm:a");
+//used moment format for current time when website is opened
+let currentTime = moment().format("kk");
 console.log(currentTime);
 
-// let currentHour = ("currentTime");
-// let present = (".present");
-// let pastHour = (".past");
-// let futureHour = (".future");
+function description(bgColor) {
+  if (currentTime === plannerTime) {
+    ("style", ".present");
+  }
+  else if (currentTime > plannerTime) {
+    ("style", ".future");
+}
+  else {
+    ("style", ".past");
 
-// function changebgoftime(); 
-//     if (currentHour === currentTime) {
-//         present
-//     }
-//     else if (currentHour < currentTime) {
-//         pastHour
-//     }
-//     else (currentHour > currentTime); {
-//         futureHour
-//     }
-
+  }
+}
+console.log(description);
+// plannerTime = 0
+// for (let i = 0; i < plannerTime.length; i++) {
+//   if (i = currentTime) {
+//     ("style", ".present")
+// }
+// }
+// console.log(plannerTime);
 
 //WHEN I view the timeblocks for that day
 //THEN each timeblock is color coded to indicate whether it is in the past, present, or future
