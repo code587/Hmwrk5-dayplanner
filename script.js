@@ -9,22 +9,30 @@ $("#currentDay").text(today.format("dddd, MMMM D, YYYY"));
 console.log(today);
 
 //used moment format for current time when website is opened
-let currentTime = moment().format("kk");
+let currentTime = parseInt(moment().format("kk"));
+
 console.log(currentTime);
 
-function description(bgColor) {
-  if (currentTime === plannerTime) {
-    ("style", ".present");
+
+function description() {
+  console.log(plannerTime);
+  console.log(bgColor)
+  for (let i = 0; i < plannerTime.length; i++) {
+  
+  if (currentTime === plannerTime[i]) {
+    bgColor[i].classList.add("present");
+    console.log(bgColor[i]);
   }
-  else if (currentTime > plannerTime) {
+  else if (currentTime > plannerTime[i]) {
+    bgColor[i].classList.add("future");
     ("style", ".future");
 }
   else {
-    ("style", ".past");
+    bgColor[i].classList.add("past");
 
   }
-}
-console.log(description);
+}}
+description();
 // plannerTime = 0
 // for (let i = 0; i < plannerTime.length; i++) {
 //   if (i = currentTime) {
@@ -37,7 +45,7 @@ console.log(description);
 //THEN each timeblock is color coded to indicate whether it is in the past, present, or future
 
 
-//save .description when button clicked 
+//saves description when button clicked 
 $(".saveBtn").on("click", function(event) {
     event.preventDefault();
    
